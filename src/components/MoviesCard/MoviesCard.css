@@ -1,0 +1,119 @@
+.card {
+  max-width: 360px;
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  height: 201px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.card__button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.card__button_type_saved {
+  background-image: url("../../images/save-min.svg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  padding: 0;
+}
+
+.card__button_type_save {
+  color: #fff;
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 9px;
+  border-radius: 30px;
+  background: #313131;
+  padding: 6px 7px;
+}
+
+.card__button_type_delete {
+  background: url(../../images/delete-min.svg);
+  width: 21px;
+  height: 21px;
+  border-radius: 100px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card:hover .card__button_type_delete {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 0 0;
+  padding: 0 14px;
+}
+
+.card__name {
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.card__duration {
+  color: #8b8b8b;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px;
+  padding: 4px;
+  border-radius: 3px;
+  background: #2f2f2f;
+}
+
+@media screen and (max-width: 868px) {
+  .card {
+    max-width: 339px;
+  }
+
+  .card__image {
+    height: 190px;
+  }
+
+  .card__container {
+    margin-top: 25px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .card {
+    max-width: 300px;
+  }
+
+  .card__image {
+    height: 168px;
+  }
+
+  .card__button {
+    top: 10px;
+    right: 10px;
+  }
+
+  .card__container {
+    margin-top: 16px;
+  }
+
+  .card__name {
+    font-size: 12px;
+  }
+}
