@@ -49,8 +49,17 @@
 
 @media screen and (max-width: 768px) {
   .search {
+    padding-top: 75px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  .search__form {
+    gap: 40px;
+  }
+
+  .search__input-button {
+    align-items: flex-start;
   }
 }
 
@@ -58,9 +67,15 @@
   .search {
     padding-left: 14px;
     padding-right: 14px;
+    padding-top: 75px;
+  }
+
+  .search__form {
+    gap: 46px;
   }
 
   .search__input {
     min-height: 44px;
+    padding-left: 14px;
   }
 }

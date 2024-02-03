@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: auto;
+  margin: 70px auto 69px;
 }
 
 .register__logo {
@@ -28,7 +28,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 91px;
+  margin-bottom: 80px;
 }
 
 .register__label {
@@ -108,7 +108,7 @@
   max-width: 369px;
   width: 100%;
   gap: 6px;
-  margin: 16px 0 0;
+  margin: 16px 0 0 15px;
 }
 
 .register__question {
@@ -132,8 +132,17 @@
   text-decoration: none;
 }
 
+@media screen and (max-width: 768px) {
+  .register {
+    margin-top: 232px;
+    margin-bottom: 232px;
+  }
+}
+
 @media screen and (max-width: 399px) {
   .register {
+    margin-top: 55px;
+    margin-bottom: 30px;
     align-items: center;
   }
 
@@ -148,7 +157,7 @@
   .register__form {
     max-width: 260px;
     min-width: 260px;
-    margin-bottom: 149px;
+    margin-bottom: 170px;
   }
 
   .register__btn {
@@ -162,6 +171,10 @@
     min-width: 260px;
     margin-top: 14px;
     gap: 7px;
+  }
+
+  .register__container {
+    margin-left: 2px;
   }
 
   .register__question {

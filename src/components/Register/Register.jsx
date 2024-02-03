@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 
 function Register({ isError }) {
   return (
-    <div className="register">
+    <main className="register">
       <Link className="link register__logo" to="/" />
       <h1 className="register__title">Добро пожаловать!</h1>
       <form className="register__form">
-        <label for="name" className="register__label">
-          Имя
-        </label>
+        <label className="register__label">Имя</label>
         <input
           type="text"
           name="name"
@@ -18,10 +16,9 @@ function Register({ isError }) {
           required
           minLength={2}
           maxLength={30}
+          placeholder="Имя"
         />
-        <label for="email" className="register__label">
-          E-mail
-        </label>
+        <label className="register__label">E-mail</label>
         <input
           type="email"
           name="email"
@@ -29,10 +26,9 @@ function Register({ isError }) {
           required
           minLength={2}
           maxLength={30}
+          placeholder="E-mail"
         />
-        <label for="password" className="register__label">
-          Пароль
-        </label>
+        <label className="register__label">Пароль</label>
         <input
           type="password"
           name="password"
@@ -42,11 +38,12 @@ function Register({ isError }) {
           required
           minLength={2}
           maxLength={20}
+          placeholder="Пароль"
         />
         <span className="register__error">Что-то пошло не так</span>
       </form>
       <button
-        type="button"
+        type="submit"
         className={`register__btn ${
           isError ? "register__btn_disabled" : "button"
         }`}
@@ -59,7 +56,7 @@ function Register({ isError }) {
           Войти
         </Link>
       </div>
-    </div>
+    </main>
   );
 }
 

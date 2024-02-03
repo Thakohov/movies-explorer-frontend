@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 
 function Login({ isError }) {
   return (
-    <div className="login">
+    <main className="login">
       <Link className="link login__logo" to="/" />
       <h1 className="login__title">Рады видеть!</h1>
       <form className="login__form">
-        <label for="email" className="login__label">
-          E-mail
-        </label>
+        <label className="login__label">E-mail</label>
         <input
           type="email"
           name="email"
@@ -18,10 +16,9 @@ function Login({ isError }) {
           required
           minLength={2}
           maxLength={30}
+          placeholder="E-mail"
         />
-        <label for="password" className="login__label">
-          Пароль
-        </label>
+        <label className="login__label">Пароль</label>
         <input
           type="password"
           name="password"
@@ -29,11 +26,12 @@ function Login({ isError }) {
           required
           minLength={2}
           maxLength={20}
+          placeholder="Пароль"
         />
         <span className="login__error">Что-то пошло не так</span>
       </form>
       <button
-        type="button"
+        type="submit"
         className={`login__btn ${isError ? "login__btn_disabled" : "button"}`}
       >
         Войти
@@ -44,7 +42,7 @@ function Login({ isError }) {
           Регистрация
         </Link>
       </div>
-    </div>
+    </main>
   );
 }
 

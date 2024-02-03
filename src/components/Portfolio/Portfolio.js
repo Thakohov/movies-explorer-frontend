@@ -34,7 +34,7 @@ function Portfolio() {
             className="link portfolio__link"
             rel="noreferrer"
           >
-            <p className="portfolio__heading">Одностраничное предложение</p>
+            <p className="portfolio__heading">Одностраничное приложение</p>
             <div className="portfolio__logo"></div>
           </a>
         </li>

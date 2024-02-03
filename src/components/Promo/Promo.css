@@ -3,11 +3,10 @@
   background-color: #272727;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: 151px;
   width: calc(100% - 80px);
-  min-height: 493px;
   margin: 0 auto;
+  padding-top: 160px;
   padding-bottom: 30px;
   box-sizing: border-box;
 }
@@ -27,8 +26,8 @@
 @media screen and (max-width: 768px) {
   .promo {
     width: calc(100% - 40px);
-    min-height: 834px;
-    gap: 314px;
+    padding-top: 347px;
+    gap: 312px;
   }
 
   .promo__title {
@@ -42,7 +41,7 @@
 @media screen and (max-width: 555px) {
   .promo {
     width: calc(100% - 28px);
-    min-height: 586px;
+    padding-top: 215px;
     gap: 212px;
     padding-bottom: 17px;
   }

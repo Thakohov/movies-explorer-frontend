@@ -18,6 +18,10 @@ function App() {
   const footerPath = ["/", "/movies", "/saved-movies"];
   const headerPath = ["/", "/movies", "/saved-movies", "/profile"];
 
+  const signOut = () => {
+    navigate("/", { replace: true });
+  };
+
   const goBack = () => {
     navigate(-1);
   };
@@ -32,7 +36,9 @@ function App() {
         <Route path="/saved-movies" element={<SavedMovies />} />
         <Route
           path="/profile"
-          element={<Profile isEditMode={false} isError={false} />}
+          element={
+            <Profile isEditMode={false} isError={false} onSignOut={signOut} />
+          }
         />
         <Route path="/signin" element={<Login isError={false} />} />
         <Route path="/signup" element={<Register isError={false} />} />

@@ -8,6 +8,7 @@
   height: 201px;
   flex-shrink: 0;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .card__button {
@@ -55,7 +56,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 14px 0 0;
+  margin: 12px 0 0;
   padding: 0 14px;
 }
 
@@ -80,7 +81,7 @@
   background: #2f2f2f;
 }
 
-@media screen and (max-width: 868px) {
+@media screen and (max-width: 768px) {
   .card {
     max-width: 339px;
   }
@@ -90,7 +91,7 @@
   }
 
   .card__container {
-    margin-top: 25px;
+    margin-top: 20px;
     padding: 0;
   }
 }
@@ -110,7 +111,13 @@
   }
 
   .card__container {
-    margin-top: 16px;
+    margin-top: 12px;
+  }
+
+  .card__duration {
+    padding-top: 5px;
+    padding-right: 9px;
+    padding-left: 9px;
   }
 
   .card__name {

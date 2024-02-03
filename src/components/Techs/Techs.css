@@ -1,5 +1,5 @@
 .techs {
-  padding: 110px 70px;
+  padding: 100px 70px;
   margin: 0 auto;
   background: #272727;
 }
@@ -41,6 +41,7 @@
 
 .techs__container {
   list-style: none;
+  margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;

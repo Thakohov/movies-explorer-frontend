@@ -1,9 +1,9 @@
 import "./Profile.css";
 import React from "react";
 
-function Profile({ isEditMode, isError, onClick }) {
-  const [email, setEmail] = React.useState("pochta@yandex.ru");
-  const [name, setName] = React.useState("Эльдар");
+function Profile({ isEditMode, isError, onClick, onSignOut }) {
+  const [email, setEmail] = React.useState("");
+  const [name, setName] = React.useState("");
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -14,43 +14,42 @@ function Profile({ isEditMode, isError, onClick }) {
   };
 
   return (
-    <section className="profile">
+    <main className="profile">
       <h1 className="profile__heading">Привет, Эльдар!</h1>
       <form className="profile__form">
         <fieldset className="profile__fieldset profile__fieldset_type_underline">
-          <label className="profile__label" for="name">
-            Имя
-          </label>
+          <label className="profile__label">Имя</label>
           <input
             type="text"
             name="name"
             className="profile__input"
-            value={name}
             onChange={handleChangeName}
+            minLength={2}
+            maxLength={30}
+            placeholder="Имя"
           />
         </fieldset>
         <fieldset className="profile__fieldset">
-          <label className="profile__label" for="email">
-            E-mail
-          </label>
+          <label className="profile__label">E-mail</label>
           <input
             name="email"
             type="email"
             className="profile__input"
-            value={email}
             onChange={handleChangeEmail}
+            placeholder="E-mail"
           />
         </fieldset>
       </form>
       {!isEditMode ? (
         <>
-          <button
-            className="button profile__button profile__button_type_edit"
-            onClick={onClick}
-          >
+          <button className="button profile__button profile__button_type_edit">
             Редактировать
           </button>
-          <button className="button profile__button profile__button_type_signout">
+          <button
+            type="button"
+            className="button profile__button profile__button_type_signout"
+            onClick={onSignOut}
+          >
             Выйти из аккаунта
           </button>
         </>
@@ -70,7 +69,7 @@ function Profile({ isEditMode, isError, onClick }) {
           </button>
         </>
       )}
-    </section>
+    </main>
   );
 }
 

@@ -40,10 +40,10 @@
 
 .about-project__paragraph {
   color: #fff;
-  font-size: 20px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 20px;
   letter-spacing: -0.8px;
   margin: 0;
 }
@@ -96,6 +96,7 @@
   .about-project__paragraph {
     font-size: 12px;
     line-height: 18px;
+    letter-spacing: 0;
   }
 
   .about-project__timeline {

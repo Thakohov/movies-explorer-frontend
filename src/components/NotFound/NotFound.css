@@ -8,7 +8,6 @@
 
 .not-found__title {
   color: #fff;
-  text-align: center;
   font-size: 140px;
   font-style: normal;
   font-weight: 400;
@@ -18,7 +17,6 @@
 
 .not-found__text {
   color: #fff;
-  text-align: center;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -28,23 +26,33 @@
 
 .not-found__link {
   color: #4285f4;
-  text-align: center;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border: none;
+  cursor: pointer;
   margin: 0;
   padding: 0;
   background: none;
 }
 
+@media screen and (max-width: 768px) {
+  .not-found {
+    padding-top: 408px;
+    padding-bottom: 222px;
+  }
+}
+
 @media screen and (max-width: 555px) {
   .not-found {
-    padding-top: 286px;
+    padding-top: 330px;
+    padding-bottom: 30px;
   }
 
   .not-found__title {
     font-size: 80px;
+    margin-bottom: 10px;
   }
 
   .not-found__text {
