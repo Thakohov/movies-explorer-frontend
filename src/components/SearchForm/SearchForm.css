@@ -1,0 +1,81 @@
+.search {
+  padding: 80px 70px 0;
+}
+
+.search__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 29px;
+  padding: 0 0 40px;
+  border-bottom: 1px solid #424242;
+}
+
+.search__input-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.search__input {
+  border-radius: 8px;
+  background: #2f2f2f;
+  border: none;
+  min-height: 50px;
+  max-width: 1086px;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 0 0 0 20px;
+}
+
+.search__input:focus {
+  outline: 1px solid #4285f4;
+}
+
+.search__button {
+  background: url("../../images/find-min.svg") no-repeat;
+  min-width: 44px;
+  height: 44px;
+  background-size: contain;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    padding-top: 75px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .search__form {
+    gap: 40px;
+  }
+
+  .search__input-button {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .search {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 75px;
+  }
+
+  .search__form {
+    gap: 46px;
+  }
+
+  .search__input {
+    min-height: 44px;
+    padding-left: 14px;
+  }
+}

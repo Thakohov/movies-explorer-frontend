@@ -1,0 +1,70 @@
+.movie {
+  padding: 80px 70px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 55px 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards__button {
+  margin: 76px auto 0;
+  padding: 0;
+  width: 320px;
+  height: 36px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: transparent;
+  border-radius: 6px;
+  border: 1px solid #424242;
+}
+
+@media screen and (max-width: 768px) {
+  .movie {
+    padding-top: 79px;
+    padding-right: 30px;
+    padding-left: 30px;
+    box-sizing: border-box;
+  }
+
+  .cards {
+    gap: 47px 30px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .movie {
+    max-width: fit-content;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .movie {
+    padding-top: 50px;
+    max-width: fit-content;
+  }
+
+  .cards {
+    padding-bottom: 26px;
+    gap: 35px 0;
+  }
+
+  .cards__button {
+    width: 240px;
+    margin-top: 60px;
+  }
+}

@@ -1,0 +1,9 @@
+.landing {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 555px) {
+  .landing {
+    padding-top: 14px;
+  }
+}
