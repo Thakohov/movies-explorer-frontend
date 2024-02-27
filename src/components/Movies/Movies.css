@@ -2,6 +2,15 @@
   min-height: 260px;
 }
 
+.movies__error {
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 768px) {
   .movies {
     min-height: 179px;

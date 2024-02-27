@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  position: relative;
 }
 
 .search__input {
@@ -45,6 +46,17 @@
   background-size: contain;
   padding: 0;
   margin: 0;
+}
+
+.search__error {
+  position: absolute;
+  top: 60px;
+  left: 5px;
+  color: #ff004c;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 @media screen and (max-width: 768px) {

@@ -18,7 +18,7 @@
 .profile__form {
   max-width: 410px;
   width: 100%;
-  margin: 123px 0 222px;
+  margin: 123px 0 0;
   display: flex;
   flex-direction: column;
   gap: 17px;
@@ -31,10 +31,16 @@
   background: none;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .profile__fieldset_type_underline {
   padding-bottom: 16px;
+  border-bottom: 1px solid #424242;
+}
+
+.profile__fieldset_type_underline-error {
+  padding-bottom: 35px;
   border-bottom: 1px solid #424242;
 }
 
@@ -76,6 +82,7 @@
 
 .profile__button_type_edit {
   margin-bottom: 16px;
+  margin-top: 222px;
 }
 
 .profile__button_type_signout {
@@ -83,14 +90,25 @@
 }
 
 .profile__error {
-  display: none;
   color: #ff004c;
   text-align: center;
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin: 0;
+  margin: 189px 0 0;
+}
+
+.profile__error-input {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  color: #ff004c;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: right;
 }
 
 .profile__btn {
@@ -105,7 +123,7 @@
   font-weight: 500;
   line-height: normal;
   padding: 0;
-  margin: 20px 0 0;
+  margin: 0;
   border-radius: 3px;
   background: #3456f3;
 }
@@ -113,6 +131,7 @@
 .profile__btn_type_error {
   background: #f8f8f8;
   color: #c2c2c2;
+  border: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -127,7 +146,10 @@
 
   .profile__form {
     margin-top: 97px;
-    margin-bottom: 210px;
+  }
+
+  .profile__button_type_edit {
+    margin-top: 212px;
   }
 }
 
@@ -143,12 +165,15 @@
 
   .profile__form {
     max-width: 260px;
-    margin-bottom: 379px;
     margin-top: 80px;
   }
 
   .profile__button {
     font-size: 12px;
+  }
+
+  .profile__button_type_edit {
+    margin-top: 380px;
   }
 
   .profile__btn {
