@@ -4,19 +4,19 @@ import image from "../../images/union-min.svg";
 
 function InfoTooltip({ onClose, isOpen }) {
   return (
-    <div className={`popup ${isOpen ? "popup_opened" : ""}`}>
-      <div className="popup__container popup__container_type_union">
+    <div className={`info ${isOpen ? "info_opened" : ""}`}>
+      <div className="info__container info__container_type_union">
         <button
-          className="popup__close"
+          className="info__close"
           type="button"
           onClick={onClose}
         ></button>
         <img
           src={image}
           alt="Данные успешно сохранены"
-          className="popup__image popup__union"
+          className="info__image info__union"
         />
-        <p className="popup__success-text">Данные успешно сохранены</p>
+        <p className="info__success-text">Данные успешно сохранены</p>
       </div>
     </div>
   );
