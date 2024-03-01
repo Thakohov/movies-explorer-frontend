@@ -46,9 +46,6 @@ function Profile({ onSignOut, setCurrentUser }) {
         } else {
           setRequestError(RES_ERRORS.UPDATE_DEFAULT_400);
         }
-        if (err.code === 11000) {
-          setRequestError(RES_ERRORS.UPDATE_PROFILE);
-        }
       });
   };
 
