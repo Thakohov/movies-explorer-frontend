@@ -98,6 +98,11 @@
     margin-top: 20px;
     padding: 0;
   }
+
+  .card__button_type_delete {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 555px) {
