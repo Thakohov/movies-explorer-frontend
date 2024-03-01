@@ -5,6 +5,7 @@ import useInput from "../../hooks/UseForm";
 import { RES_ERRORS } from "../../utils/constants";
 import { updateUser } from "../../utils/MainApi";
 import InfoToolTip from "../InfoToolTip/InfoToolTip";
+import infoToolSuccess from "../../images/union-min.svg";
 
 function Profile({ onSignOut, setCurrentUser }) {
   const currentUser = useContext(CurrentUserContext);
@@ -12,6 +13,8 @@ function Profile({ onSignOut, setCurrentUser }) {
   const [isEditMode, setEditMode] = useState(true);
   const [requestError, setRequestError] = useState("");
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = useState(false);
+  const [infoToolTipImage, setInfoToolTipImage] = React.useState("");
+  const [infoToolTipTitle, setInfoToolTipTitle] = React.useState("");
 
   const handleInfoToolTipOpen = () => {
     setIsInfoToolTipOpen(!isInfoToolTipOpen);
@@ -31,10 +34,12 @@ function Profile({ onSignOut, setCurrentUser }) {
     updateUser(email.value, name.value)
       .then((res) => {
         setCurrentUser(res);
-        setEditMode(true);  
+        setEditMode(true);
         setRequestError(RES_ERRORS.UPDATE_SUCCESS);
         setTimeout(() => setRequestError(""), 2500);
         setIsInfoToolTipOpen(true);
+        setInfoToolTipImage(infoToolSuccess);
+        setInfoToolTipTitle(RES_ERRORS.UPDATE_SUCCESS);
       })
       .catch((err) => {
         console.log(err);
@@ -147,7 +152,12 @@ function Profile({ onSignOut, setCurrentUser }) {
           </button>
         </>
       )}
-      <InfoToolTip isOpen={isInfoToolTipOpen} onClose={handleInfoToolTipOpen} />
+      <InfoToolTip
+        isOpen={isInfoToolTipOpen}
+        onClose={handleInfoToolTipOpen}
+        image={infoToolTipImage}
+        title={infoToolTipTitle}
+      />
     </main>
   );
 }

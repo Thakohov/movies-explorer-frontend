@@ -10,6 +10,7 @@ import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Page404 from "../NotFound/NotFound";
+import InfoTooltip from "../InfoToolTip/InfoToolTip";
 
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../../hooks/ProtectedRoute";
@@ -22,7 +23,9 @@ import {
   getMovies,
 } from "../../utils/MainApi";
 import { getMovieList, BASE_URL } from "../../utils/MoviesApi";
-import { ERRORS, RES_ERRORS } from "../../utils/constants";
+import { ERRORS, RES_ERRORS, shortMovieDuration } from "../../utils/constants";
+
+import infoToolError from "../../images/union-error-min.svg";
 
 function App() {
   const navigate = useNavigate();
@@ -51,6 +54,10 @@ function App() {
 
   const [shortMovieCheckbox, setShortMovieCheckbox] = useState(false);
   const [savedShortMovieCheckbox, setSavedShortMovieCheckbox] = useState(false);
+
+  const [isInfoToolTipOpen, setIsInfoToolTipOpen] = useState(false);
+  const [infoToolTipImage, setInfoToolTipImage] = React.useState("");
+  const [infoToolTipTitle, setInfoToolTipTitle] = React.useState("");
 
   const onSubmit = ({ token }) => {
     localStorage.setItem("token", token);
@@ -180,7 +187,7 @@ function App() {
   const sortMovies = (movies, searchForm, checkbox) => {
     return movies.filter((movie) =>
       checkbox
-        ? movie.duration <= 40 &&
+        ? movie.duration <= shortMovieDuration &&
           (movie.nameRU.toLowerCase().includes(searchForm.toLowerCase()) ||
             movie.nameEN.toLowerCase().includes(searchForm.toLowerCase()))
         : movie.nameRU.toLowerCase().includes(searchForm.toLowerCase()) ||
@@ -199,6 +206,8 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setInfoToolTipImage(infoToolError);
+        setInfoToolTipTitle(RES_ERRORS.SERVER_TIMEOUT);
       });
   };
 
@@ -212,11 +221,17 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setInfoToolTipImage(infoToolError);
+        setInfoToolTipTitle(RES_ERRORS.SERVER_TIMEOUT);
       });
   };
 
   const checkLike = (movie) =>
     savedMovies.some((item) => item.movieId === movie.movieId);
+
+  const handleInfoToolTipOpen = () => {
+    setIsInfoToolTipOpen(!isInfoToolTipOpen);
+  };
 
   return (
     <CurrentUserContext.Provider
@@ -289,6 +304,12 @@ function App() {
           />
         </Routes>
         {footerPath.includes(path) && <Footer />}
+        <InfoTooltip
+          isOpen={isInfoToolTipOpen}
+          onClose={handleInfoToolTipOpen}
+          image={infoToolTipImage}
+          title={infoToolTipTitle}
+        />
       </div>
     </CurrentUserContext.Provider>
   );

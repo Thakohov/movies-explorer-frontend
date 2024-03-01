@@ -1,8 +1,7 @@
 import React from "react";
 import "./InfoToolTip.css";
-import image from "../../images/union-min.svg";
 
-function InfoTooltip({ onClose, isOpen }) {
+function InfoTooltip({ onClose, isOpen, image, title }) {
   return (
     <div className={`info ${isOpen ? "info_opened" : ""}`}>
       <div className="info__container info__container_type_union">
@@ -13,10 +12,10 @@ function InfoTooltip({ onClose, isOpen }) {
         ></button>
         <img
           src={image}
-          alt="Данные успешно сохранены"
+          alt={title}
           className="info__image info__union"
         />
-        <p className="info__success-text">Данные успешно сохранены</p>
+        <p className="info__success-text">{title}</p>
       </div>
     </div>
   );
