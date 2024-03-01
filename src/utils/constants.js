@@ -23,6 +23,8 @@ export const ERRORS = {
   NEED_LETTERS: "Нужно ввести ключевое слово",
 };
 
+export const shortMovieDuration = 40;
+
 export const WIDTH_SIZE = { BIG: 1035, MEDIUM: 649 };
 export const COUNT_CARD = { MAX: 12, MEDIUM: 8, SMALL: 5 };
 export const ADD_CARD = { MAX: 3, MIN: 2 };
