@@ -31,19 +31,23 @@ function Profile({ onSignOut, setCurrentUser }) {
     updateUser(email.value, name.value)
       .then((res) => {
         setCurrentUser(res);
-        setEditMode(true);
+        setEditMode(true);  
         setRequestError(RES_ERRORS.UPDATE_SUCCESS);
         setTimeout(() => setRequestError(""), 2500);
         setIsInfoToolTipOpen(true);
       })
       .catch((err) => {
-        if (err === 500) {
+        console.log(err);
+        if (err.code === 500) {
           setRequestError(RES_ERRORS.SERVER_500);
         }
         if (err === 409) {
           setRequestError(RES_ERRORS.UPDATE_PROFILE);
         } else {
           setRequestError(RES_ERRORS.UPDATE_DEFAULT_400);
+        }
+        if (err.code === 11000) {
+          setRequestError(RES_ERRORS.UPDATE_PROFILE);
         }
       });
   };
