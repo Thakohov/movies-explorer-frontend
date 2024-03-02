@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import "./Header.css";
 
-function Header() {
+function Header({LoggedIn}) {
   const [isPopupOpen, setIsPopupOpen] = React.useState(false);
 
   const handlePopup = () => {
@@ -18,7 +18,7 @@ function Header() {
     <header className="header">
       <Link className="link header__logo" to="/" />
       <Navigation
-        isLoggedIn={true}
+        LoggedIn={LoggedIn}
         closePopup={closePopup}
         openPopup={handlePopup}
         isOpen={isPopupOpen}

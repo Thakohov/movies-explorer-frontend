@@ -67,6 +67,10 @@
   font-weight: 500;
   line-height: normal;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 240px;
 }
 
 .card__duration {
@@ -93,6 +97,11 @@
   .card__container {
     margin-top: 20px;
     padding: 0;
+  }
+
+  .card__button_type_delete {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -122,5 +131,6 @@
 
   .card__name {
     font-size: 12px;
+    max-width: 230px;
   }
 }

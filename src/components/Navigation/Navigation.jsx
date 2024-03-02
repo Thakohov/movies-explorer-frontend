@@ -3,12 +3,12 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
 
-function Navigation({ isLoggedIn, isOpen, closePopup, openPopup }) {
+function Navigation({ LoggedIn, isOpen, closePopup, openPopup }) {
   const path = useLocation().pathname;
 
   return (
     <>
-      {isLoggedIn ? (
+      {LoggedIn ? (
         <>
           <nav className="nav__movies">
             <NavLink
