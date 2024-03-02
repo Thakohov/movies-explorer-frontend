@@ -233,6 +233,11 @@ function App() {
     setIsInfoToolTipOpen(!isInfoToolTipOpen);
   };
 
+  const resetSearchSavedMovies = () => {
+    setSavedSearchForm("");
+    setSavedShortMovieCheckbox(false);
+  };
+
   return (
     <CurrentUserContext.Provider
       value={currentUser}
@@ -280,6 +285,7 @@ function App() {
                 searchMovies={searchSavedMovies}
                 setSearchForm={setSavedSearchForm}
                 searchForm={savedSearchForm}
+                resetSearchSavedMovies={resetSearchSavedMovies}
               />
             }
           />

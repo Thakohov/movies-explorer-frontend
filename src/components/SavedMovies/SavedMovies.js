@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import "./SavedMovies.css";
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
@@ -15,7 +16,15 @@ function SavedMovies({
   onCheckbox,
   shortMovieCheckbox,
   searchError,
+  resetSearchSavedMovies,
 }) {
+  useEffect(() => {
+    return () => {
+      resetSearchSavedMovies();
+      if (!shortMovieCheckbox) searchMovies();
+    };
+  }, []);
+
   return (
     <main className="saved">
       <SearchForm
