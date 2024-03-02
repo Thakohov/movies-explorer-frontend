@@ -63,7 +63,7 @@ function App() {
     localStorage.setItem("token", token);
     setToken(token);
     setLoggedIn(true);
-    setPreloader(true);
+    // setPreloader(false);
   };
 
   const signOut = () => {
