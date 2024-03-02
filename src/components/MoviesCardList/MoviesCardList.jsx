@@ -22,7 +22,7 @@ function MoviesCardList({ movies, onLike, onDelete, checkLike }) {
     return () => {
       window.removeEventListener("resize", handleResizeWindow);
     };
-  }, [width]);
+  }, [width, movies]);
 
   const showMore = () => {
     if (width > WIDTH_SIZE.BIG) {
